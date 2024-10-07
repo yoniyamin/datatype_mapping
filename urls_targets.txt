@@ -1,0 +1,42 @@
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Amazon%20MSK/AmazonMSK_data_types_target.htm,MSK(AWS)
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Amazon%20EMR/AmazonEMR_hadoop_data_types_target.htm,EMR(AWS)
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Amazon%20Kinesis%20Streams/amazonkinesis_data_types.htm,Kinesis Streams(AWS)
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Amazon%20Redshift/redshift_data_types.htm,Redshift(AWS)
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Amazon%20S3/ar_mapping_to_dfm_s3.htm,S3 (AWS)
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/CDP_Data_Center/cdp_hadoop_data_types_target.htm,Cloudera Data Platform (CDP) Private Cloud
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Confluent%20Cloud/confluent-data-types.htm,Confluent Cloud
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Databricks%20Lakehouse%20(Delta)/databricks_delta_lakehouse_data_types_target.htm,Databricks Lakehouse (Delta)
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/DatabricksCloudStorage/databricks-cloud-storage-data-types-target.htm,Using Databricks (Cloud Storage)
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AlloyDBforPostgreSQLTarget/postgresql_db_data_types_target.htm,Google Cloud AlloyDB for PostgreSQL
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20BigQuery/bigquery_postgresql_db_data_types_target.htm,Google Cloud BigQuery
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google-Cloud-PubSub/Pubsub-data-types.htm,Google Cloud Pub/Sub
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20MySQL/google_mysql_db_target_data_types.htm,Google Cloud SQL for MySQL
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20SQL%20for%20PostgreSQL/googlepostgres_postgresql_db_data_types_target.htm,Google Cloud SQL for PostgreSQL
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/GoogleSqlServer/SQLServerDB_target_DataTypes.htm#ar_sqlserverds_1727505754_1643423,Google Cloud SQL for SQL Server
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20Storage/googlecloud_ar_mapping_to_dfm_s3.htm,Google Cloud Storage
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Dataproc/googledataproc_hadoop_data_types_target.htm,Google Dataproc
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Hadoop/hadoop_data_types_target.htm#ar_hadoop_3420431187_1481123,Hadoop
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Hortonworks/hortonworks_data_types_target.htm,Hortonworks Data Platform (HDP)
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/ibm-db2-zos-target/zos_data_types_target.htm,IBM DB2 for z/OS
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Kafka/kafka_data_types.htm,Kafka
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft%20Azure%20ADLS/azureadls_ar_mapping_to_dfm_s3.htm,Microsoft Azure ADLS
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft_Azure_MySQL/ms_mysql_db_target_data_types.htm,Microsoft Azure Database for MySQL
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft_Azure_PostgreSQL/ms_postgresql_db_data_types_target.htm,Microsoft Azure Database for PostgreSQL
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Azure%20Event%20Hubs/azure_data_types.htm,Microsoft Azure Event Hubs
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Azure%20HDInsight/hdinsight_hadoop_data_types_target.htm,Microsoft Azure HDInsight
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft%20Azure/azure_data_types.htm#ar_azureds_2362960730_1410427,Microsoft Azure Synapse Analytics
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft%20Azure%20SQL%20Database/azure_SQLServerDB_target_DataTypes.htm,Microsoft Azure SQL
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/MicrosoftFabricDW/fabric-data-types.htm,Microsoft Fabric Data Warehouse
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SQL%20Server/SQLServerDB_target_DataTypes.htm#ar_sqlserverds_1727505754_1643423,Microsoft SQL Server
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/MySQL/mysql_db_target_data_types.htm#ar_mysql_902766750_1421922,MySQL-based
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/IBM%20Netezza/netezza_data_types_target.htm#ar_netezzads_4262553552_1348027,Netezza Performance Server (NPS)
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/ODBC/odbc_data_types_target.htm#ar_odbcds_2456996027_1416796,ODBC (Generic)
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Oracle/ora_target_data_types.htm#ar_oracleds_385117211_1680373,Oracle
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/PostgreSQL/postgresql_db_data_types_target.htm#ar_postgresds_802412600_1397898,PostgreSQL-Based
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP%20Hana%20Target/saphana_data_types_target.htm,SAP HANA
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP%20Sybase%20ASE/SAP_Sybase_ASE_database_Target_Data_Types.htm#ar_sybaseds_2343061694_1364101,SAP Sybase ASE
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/MemSQL/memsql_mysql_db_target_data_types.htm#ar_mysql_902766750_1421922,SingleStore
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Snowflake%20Target/SNOW_data_types.htm,Snowflake(AWS)
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Snowflake%20Azure%20Target/azure_SNOW_data_types.htm,Snowflake on Azure
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Snowflake_Google_Target/google_SNOW_data_types.htm,Snowflake on Google
+https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Teradata/data_types_teradata.htm#ar_teradatads_1612829151_1290916,Teradata
