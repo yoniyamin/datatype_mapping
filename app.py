@@ -1,4 +1,5 @@
 # app.py
+import gunicorn
 from flask import Flask, render_template, jsonify, request
 from bs4 import BeautifulSoup
 import requests
