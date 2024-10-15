@@ -8,11 +8,19 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
             max-width: 1000px;
+            text-align: center;
             margin: 0 auto;
-            color: #333333;
-            background-color: #e8f5e9;
-            padding: 20px;
         }
 
         #qlik-logo {
@@ -95,47 +103,47 @@
     </style>
 </head>
 <body>
-<div class="container mt-5">
+<div class="container">
     <!-- Qlik Logo -->
     <img id="qlik-logo" src="/static/new_design1.jpg" alt="Qlik Logo">
     <h1>Datatype Mapping</h1>
-</div>
 
-<label for="source-select">Select Source:</label>
-<select id="source-select">
-    <option value="">--Please choose a source--</option>
-    {% for source in sources %}
-    <option value="{{ source }}">{{ source }}</option>
-    {% endfor %}
-</select>
+    <label for="source-select">Select Source:</label>
+    <select id="source-select">
+        <option value="">--Please choose a source--</option>
+        {% for source in sources %}
+        <option value="{{ source }}">{{ source }}</option>
+        {% endfor %}
+    </select>
 
-<label for="target-select">Select Target:</label>
-<select id="target-select">
-    <option value="">--Please choose a target--</option>
-    {% for target in targets %}
-    <option value="{{ target }}">{{ target }}</option>
-    {% endfor %}
-</select>
+    <label for="target-select">Select Target:</label>
+    <select id="target-select">
+        <option value="">--Please choose a target--</option>
+        {% for target in targets %}
+        <option value="{{ target }}">{{ target }}</option>
+        {% endfor %}
+    </select>
 
-<!-- Toggle Switch to Use Existing or Rescrape Data -->
-<div>
-    <label for="use-existing-toggle">Use Existing Mappings:</label>
-    <input type="checkbox" id="use-existing-toggle" checked>
-</div>
-
-<button id="generate-table" class="btn btn-success">Generate Table</button>
-
-<div id="progress-bar-container">
-    <div id="progress-bar">
-        <div id="progress-bar-fill">0%</div>
+    <!-- Toggle Switch to Use Existing or Rescrape Data -->
+    <div>
+        <label for="use-existing-toggle">Use Existing Mappings:</label>
+        <input type="checkbox" id="use-existing-toggle" checked>
     </div>
+
+    <button id="generate-table" class="btn btn-success">Generate Table</button>
+
+    <div id="progress-bar-container">
+        <div id="progress-bar">
+            <div id="progress-bar-fill">0%</div>
+        </div>
+    </div>
+
+    <div id="table-container"></div>
+
+    <button id="export-csv" class="btn btn-success">Export to CSV</button>
+
+    <div id="url-links"></div>
 </div>
-
-<div id="table-container"></div>
-
-<button id="export-csv" class="btn btn-success">Export to CSV</button>
-
-<div id="url-links"></div>
 
 <script>
     document.getElementById('generate-table').addEventListener('click', function () {
