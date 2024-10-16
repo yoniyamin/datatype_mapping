@@ -4,58 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datatype Mapping</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #333333;
-            background-color: #F5F5F5;
-            padding: 20px;
+            background-color: #e8f5e9;
+            padding: 40px 0;
         }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
         #qlik-logo {
             display: block;
             margin: 0 auto;
             width: 150px;
+            border-radius: 12px;
         }
+
         select, button {
             margin: 10px 0;
-            padding: 5px;
+            padding: 10px;
+            border-radius: 25px;
+            border: 1px solid #00b140;
+            background-color: #f7f7f7;
         }
+
         table {
             border-collapse: collapse;
             width: 100%;
             margin-top: 20px;
             word-wrap: break-word;
+            border-radius: 10px;
         }
+
         th, td {
             border: 1px solid black;
-            padding: 8px;
+            padding: 12px;
             text-align: left;
+            border-radius: 10px;
         }
+
         th {
             background-color: #f2f2f2;
         }
+
         #url-links {
             margin-top: 20px;
             color: #94579C;
         }
+
         #table-container {
             max-height: 400px;
             overflow-y: auto;
+            border-radius: 12px;
         }
+
         #use-existing-toggle {
             margin-top: 15px;
+            border-radius: 25px;
         }
+
         #progress-bar-container {
             display: none;
             margin-top: 20px;
         }
+
         #progress-bar {
             width: 100%;
             background-color: #f3f3f3;
             height: 25px;
+            border-radius: 12px;
         }
+
         #progress-bar-fill {
             width: 0%;
             height: 100%;
@@ -63,55 +92,58 @@
             text-align: center;
             line-height: 25px;
             color: white;
+            border-radius: 12px;
         }
+
         #export-csv {
             margin-top: 15px;
             display: none;
+            border-radius: 25px;
         }
     </style>
 </head>
 <body>
 <div class="container">
     <!-- Qlik Logo -->
-    <img id="qlik-logo" src="/static/qlik_logo.png" alt="Qlik Logo">
+    <img id="qlik-logo" src="/static/new_design1.jpg" alt="Qlik Logo">
     <h1>Datatype Mapping</h1>
-</div>
 
-<label for="source-select">Select Source:</label>
-<select id="source-select">
-    <option value="">--Please choose a source--</option>
-    {% for source in sources %}
-    <option value="{{ source }}">{{ source }}</option>
-    {% endfor %}
-</select>
+    <label for="source-select">Select Source:</label>
+    <select id="source-select">
+        <option value="">--Please choose a source--</option>
+        {% for source in sources %}
+        <option value="{{ source }}">{{ source }}</option>
+        {% endfor %}
+    </select>
 
-<label for="target-select">Select Target:</label>
-<select id="target-select">
-    <option value="">--Please choose a target--</option>
-    {% for target in targets %}
-    <option value="{{ target }}">{{ target }}</option>
-    {% endfor %}
-</select>
+    <label for="target-select">Select Target:</label>
+    <select id="target-select">
+        <option value="">--Please choose a target--</option>
+        {% for target in targets %}
+        <option value="{{ target }}">{{ target }}</option>
+        {% endfor %}
+    </select>
 
-<!-- Toggle Switch to Use Existing or Rescrape Data -->
-<div>
-    <label for="use-existing-toggle">Use Existing Mappings:</label>
-    <input type="checkbox" id="use-existing-toggle" checked>
-</div>
-
-<button id="generate-table">Generate Table</button>
-
-<div id="progress-bar-container">
-    <div id="progress-bar">
-        <div id="progress-bar-fill">0%</div>
+    <!-- Toggle Switch to Use Existing or Rescrape Data -->
+    <div>
+        <label for="use-existing-toggle">Use Existing Mappings:</label>
+        <input type="checkbox" id="use-existing-toggle" checked>
     </div>
+
+    <button id="generate-table" class="btn btn-success">Generate Table</button>
+
+    <div id="progress-bar-container">
+        <div id="progress-bar">
+            <div id="progress-bar-fill">0%</div>
+        </div>
+    </div>
+
+    <div id="table-container"></div>
+
+    <button id="export-csv" class="btn btn-success">Export to CSV</button>
+
+    <div id="url-links"></div>
 </div>
-
-<div id="table-container"></div>
-
-<button id="export-csv">Export to CSV</button>
-
-<div id="url-links"></div>
 
 <script>
     document.getElementById('generate-table').addEventListener('click', function () {
@@ -175,7 +207,7 @@
 
     function renderTable(data, source, target) {
         const tableHtml = `
-            <table id="generated-table">
+            <table id="generated-table" class="table table-bordered table-striped">
                 <tr>
                     <th>Source Datatype</th>
                     <th>Replicate Datatype</th>
