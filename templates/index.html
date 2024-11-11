@@ -8,12 +8,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #e8f5e9;
             padding: 40px 0;
+            background-color: white;
         }
 
         .container {
-            background-color: white;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -21,13 +20,8 @@
             max-width: 1000px;
             text-align: center;
             margin: 0 auto;
-        }
-
-        #qlik-logo {
-            display: block;
-            margin: 0 auto;
-            width: 150px;
-            border-radius: 12px;
+            background-color: #F7F7F7 !important;
+            border: 1px solid #ddd;
         }
 
         select, button {
@@ -104,9 +98,7 @@
 </head>
 <body>
 <div class="container">
-    <!-- Qlik Logo -->
-    <img id="qlik-logo" src="/static/new_design1.jpg" alt="Qlik Logo">
-    <h1>Datatype Mapping</h1>
+    <h1 style="color: #00b140;">Datatype Mapping</h1>
 
     <label for="source-select">Select Source:</label>
     <select id="source-select">
