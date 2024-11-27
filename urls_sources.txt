@@ -1,31 +1,31 @@
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Aurora%20PostgreSQL/aws_postgresql_data_types_source.htm#ar_postgresds_802412600_1377123,AWS/Aurora Postgres
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AWS%20RDS%20MSSQL/aws_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412,AWS Sql Server
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AWS%20RDS%20MySQL/aws_mysql_db_source_data_types.htm,AWS MySQL
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AWS%20RDS%20PostgreSQL/aws_postgresql_data_types_source.htm#ar_postgresds_802412600_1377123,AWS Postgres
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AIS%20CDC%20Solutions/ais_data_type_mapping.htm#ar_aisds_1530464498_1268015,AIS Source
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AlloyDBforPostgreSQLSource/postgresql_data_types_source.htm,Google Cloud AlloyDB for PostgreSQL
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/GoogleCloudSQLforSQLServerSource/GoogleCloudSQLforSQLServerSource-data-types.htm,Google Cloud SQL For Sql Server
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20MySQL%20Source/googlesource_mysql_db_source_data_types.htm,Google Cloud MySQL
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20SQL%20for%20PostgreSQL_Source/postgresql_data_types_source.htm#ar_postgresds_802412600_1377123,Google Cloud Postgres
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/IBM%20DB2%20for%20iSeries/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728,DB2 on iSeries
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/IBM%20DB2%20for%20LUW/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728,DB2 on LUW
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/IBM%20DB2%20for%20zOS/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728,DB2 on zOS
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/IBM%20Informix/informix_db_data_types_source.htm#ar_informix_3524105662_1387696,Informix
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft%20Azure%20SQL%20Managed%20Instance/msmazuremi_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412,Azure Sql Server
-https://help.qlik.com/en-US/replicate/November2023/Content/Global_Common/Content/SharedReplicateHDD/Azure-MSCDC-Source/msmazuremi_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412,Azure Sql Server(MS-CDC)
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/MicrosoftSQLServer-MSCDC/MicrosoftSQLServer-MSCDC-data-types.htm,Sql Server(MS-CDC)
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SQL%20Server/SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412,Sql Server
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Azure%20Database%20for%20MySQL/azure_mysql_db_source_data_types.htm#ar_mysql_902766750_1667672,Azure MySQL
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/MySQL/mysql_db_source_data_types.htm#ar_mysql_902766750_1667672,MySQL
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/ODBC/odbc_data_types_source.htm#ar_odbcds_2456996027_1377075,ODBC (Generic)
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/ODBC%20with%20CDC/odbc_data_types_source.htm#ar_odbc_source_with_cdc_3709929996_1303592,ODBC with CDC (Generic)
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Oracle/ora_source_data_types.htm#ar_oracleds_385117211_1677127,Oracle
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/PostgreSQL/postgresql_data_types_source.htm#ar_postgresds_802412600_1377123,PostgreSQL
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/salesforce/salesforce_postgresql_db_data_types_target.htm,Salesforce
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Salesforce-Incremental/salesforce_incremental_db_data_types_source.htm,Salesforce Incremental
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP/SAP_source_data_types.htm,SAP
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP%20Native/native_SAP_source_data_types.htm,SAP Native
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAPExtractor/extractor_AP_source_data_types.htm,SAP Extractor
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP%20ODP/SAP_ODP_data_types_source.htm,SAP ODP
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP%20Sybase%20ASE/SAP_Sybase_ASE_db_Source_Data_Types.htm#ar_sybaseds_2343061694_1631287,Sybase ASE
-https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Teradata/teradata_data_types_source.htm#ar_teradatads_1612829151_1374294,Teradata
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Aurora%20PostgreSQL/aws_postgresql_data_types_source.htm#ar_postgresds_802412600_1377123,AWS/Aurora Postgres
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/AWS%20RDS%20MSSQL/aws_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412,AWS Sql Server
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/AWS%20RDS%20MySQL/aws_mysql_db_source_data_types.htm,AWS MySQL
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/AWS%20RDS%20PostgreSQL/aws_postgresql_data_types_source.htm#ar_postgresds_802412600_1377123,AWS Postgres
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/AIS%20CDC%20Solutions/ais_data_type_mapping.htm#ar_aisds_1530464498_1268015,AIS Source
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/AlloyDBforPostgreSQLSource/postgresql_data_types_source.htm,Google Cloud AlloyDB for PostgreSQL
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/GoogleCloudSQLforSQLServerSource/GoogleCloudSQLforSQLServerSource-data-types.htm,Google Cloud SQL For Sql Server
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Google%20Cloud%20MySQL%20Source/googlesource_mysql_db_source_data_types.htm,Google Cloud MySQL
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Google%20Cloud%20SQL%20for%20PostgreSQL_Source/postgresql_data_types_source.htm#ar_postgresds_802412600_1377123,Google Cloud Postgres
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/IBM%20DB2%20for%20iSeries/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728,DB2 on iSeries
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/IBM%20DB2%20for%20LUW/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728,DB2 on LUW
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/IBM%20DB2%20for%20zOS/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728,DB2 on zOS
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/IBM%20Informix/informix_db_data_types_source.htm#ar_informix_3524105662_1387696,Informix
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Microsoft%20Azure%20SQL%20Managed%20Instance/msmazuremi_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412,Azure Sql Server
+https://help.qlik.com/en-US/replicate/November2024/Content/Global_Common/Content/SharedReplicateHDD/Azure-MSCDC-Source/msmazuremi_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412,Azure Sql Server(MS-CDC)
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/MicrosoftSQLServer-MSCDC/MicrosoftSQLServer-MSCDC-data-types.htm,Sql Server(MS-CDC)
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SQL%20Server/SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412,Sql Server
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Azure%20Database%20for%20MySQL/azure_mysql_db_source_data_types.htm#ar_mysql_902766750_1667672,Azure MySQL
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/MySQL/mysql_db_source_data_types.htm#ar_mysql_902766750_1667672,MySQL
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/ODBC/odbc_data_types_source.htm#ar_odbcds_2456996027_1377075,ODBC (Generic)
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/ODBC%20with%20CDC/odbc_data_types_source.htm#ar_odbc_source_with_cdc_3709929996_1303592,ODBC with CDC (Generic)
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Oracle/ora_source_data_types.htm#ar_oracleds_385117211_1677127,Oracle
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/PostgreSQL/postgresql_data_types_source.htm#ar_postgresds_802412600_1377123,PostgreSQL
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/salesforce/salesforce_postgresql_db_data_types_target.htm,Salesforce
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Salesforce-Incremental/salesforce_incremental_db_data_types_source.htm,Salesforce Incremental
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAP/SAP_source_data_types.htm,SAP
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAP%20Native/native_SAP_source_data_types.htm,SAP Native
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAPExtractor/extractor_AP_source_data_types.htm,SAP Extractor
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAP%20ODP/SAP_ODP_data_types_source.htm,SAP ODP
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAP%20Sybase%20ASE/SAP_Sybase_ASE_db_Source_Data_Types.htm#ar_sybaseds_2343061694_1631287,Sybase ASE
+https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Teradata/teradata_data_types_source.htm#ar_teradatads_1612829151_1374294,Teradata
