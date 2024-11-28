@@ -10,7 +10,7 @@ class AdvancedMappingParser:
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
-        self.logger.setLevel(logging.DEBUG)
+        self.logger.setLevel(logging.INFO)
 
     def _parse_condition_block(self, block: str) -> Dict[str, Any]:
         """

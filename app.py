@@ -9,6 +9,12 @@ from advancedParsing import AdvancedMappingParser, process_database_mappings
 
 app = Flask(__name__)
 
+scraping_progress = {"progress": 0}  # Global variable to store scraping progress
+
+@app.route('/api/scraping_progress')
+def get_scraping_progress():
+    return jsonify(scraping_progress)
+
 def normalize_type(data_type):
     return data_type.split('(')[0].strip().upper()
 
@@ -97,36 +103,36 @@ def read_urls_from_file(filename):
 
 # Update the mappings.json file
 def update_mappings():
-    """
-    Scrape and update mappings for all databases (sources and targets).
-    """
+    global scraping_progress
     sources_urls = read_urls_from_file('urls_sources.txt')
     targets_urls = read_urls_from_file('urls_targets.txt')
 
-    mappings = {"sources": {}, "targets": {}}
+    mappings = {
+        "sources": {},
+        "targets": {}
+    }
 
-    # Scrape source databases
+    total_tasks = len(sources_urls) + len(targets_urls)
+    completed_tasks = 0
+
     for url, db_type, original_url in sources_urls:
         data = extract_mapping_from_page(url)
         if isinstance(data, list):
             mappings["sources"][db_type] = {"data_types": data, "url": original_url}
-            print(f"Scraping {url} succeeded. {db_type} added to sources.")
-        else:
-            print(f"Error processing source {url}: {data.get('error', 'Unknown error')}")
+        completed_tasks += 1
+        scraping_progress["progress"] = int((completed_tasks / total_tasks) * 100)
 
-    # Scrape target databases
     for url, db_type, original_url in targets_urls:
         data = extract_mapping_from_page(url)
         if isinstance(data, list):
             mappings["targets"][db_type] = {"data_types": data, "url": original_url}
-            print(f"Scraping {url} succeeded. {db_type} added to targets.")
-        else:
-            print(f"Error processing target {url}: {data.get('error', 'Unknown error')}")
+        completed_tasks += 1
+        scraping_progress["progress"] = int((completed_tasks / total_tasks) * 100)
 
-    # Save updated mappings
     with open('mappings.json', 'w') as f:
         json.dump(mappings, f, indent=2)
-    print("Mapping update completed.")
+
+    scraping_progress["progress"] = 100
 
 def update_mappings_specific(source=None, target=None):
     """
