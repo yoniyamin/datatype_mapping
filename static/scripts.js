@@ -55,38 +55,41 @@ document.getElementById('generate-table').addEventListener('click', function () 
 });
 
 
+let isLoading = false;
 
-
-// Start Progress Bar
 function startProgressBar() {
+    if (isLoading) return; // Prevent multiple starts
+    isLoading = true;
+
     const progressBarContainer = document.getElementById('progress-bar-container');
     const progressBarFill = document.getElementById('progress-bar-fill');
 
     if (progressBarContainer && progressBarFill) {
         progressBarContainer.style.display = 'block';
 
-        // Poll the backend for progress updates
         const interval = setInterval(() => {
             fetch('/api/scraping_progress')
                 .then(response => response.json())
                 .then(data => {
-                    const progress = data.progress;
+                    const progress = data.progress || 0;
                     progressBarFill.style.width = `${progress}%`;
                     progressBarFill.innerText = `${progress}%`;
 
-                    // Stop polling when progress reaches 100%
                     if (progress >= 100) {
                         clearInterval(interval);
-                        stopProgressBar();
+                        progressBarContainer.style.display = 'none';
+                        isLoading = false; // Reset loading state
                     }
                 })
                 .catch(error => {
                     console.error('Error fetching progress:', error);
                     clearInterval(interval); // Stop polling on error
+                    isLoading = false; // Reset loading state
                 });
         }, 1000); // Poll every second
     }
 }
+
 
 // Stop Progress Bar
 function stopProgressBar() {
