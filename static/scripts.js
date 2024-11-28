@@ -60,27 +60,30 @@ function startProgressBar() {
     const progressBarFill = document.getElementById('progress-bar-fill');
 
     if (progressBarContainer && progressBarFill) {
-        progressBarContainer.style.display = 'block';
+        progressBarContainer.style.display = 'block'; // Show progress bar
 
         const eventSource = new EventSource('/api/scraping_progress');
+
         eventSource.onmessage = function (event) {
-            const progress = JSON.parse(event.data).progress || 0;
+            const data = JSON.parse(event.data);
+            const progress = data.progress || 0;
+
             progressBarFill.style.width = `${progress}%`;
             progressBarFill.innerText = `${progress}%`;
 
             if (progress >= 100) {
-                progressBarContainer.style.display = 'none';
                 eventSource.close();
+                stopProgressBar();
             }
         };
 
         eventSource.onerror = function () {
-            console.error('SSE connection error.');
+            console.error('Error with SSE connection. Retrying...');
             eventSource.close();
+            setTimeout(startProgressBar, 3000); // Retry after 3 seconds
         };
     }
 }
-
 
 function stopProgressBar() {
     const progressBarContainer = document.getElementById('progress-bar-container');
@@ -89,9 +92,10 @@ function stopProgressBar() {
     if (progressBarContainer && progressBarFill) {
         progressBarFill.style.width = '0%';
         progressBarFill.innerText = '0%';
-        progressBarContainer.style.display = 'none'; // Hide the progress bar
+        progressBarContainer.style.display = 'none'; // Hide progress bar
     }
 }
+
 
 function renderTable(data) {
     const tableContainer = document.getElementById('table-container');
