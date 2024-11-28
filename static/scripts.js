@@ -59,32 +59,45 @@ document.getElementById('generate-table').addEventListener('click', function () 
 
 // Start Progress Bar
 function startProgressBar() {
-    const progressBar = document.getElementById('progress-bar');
-    if (progressBar) {
-        progressBar.style.display = 'block';
-        progressBar.value = 0;
+    const progressBarContainer = document.getElementById('progress-bar-container');
+    const progressBarFill = document.getElementById('progress-bar-fill');
 
-        // Simulate progress
-        let progress = 0;
+    if (progressBarContainer && progressBarFill) {
+        progressBarContainer.style.display = 'block';
+
+        // Poll the backend for progress updates
         const interval = setInterval(() => {
-            progress += 10;
-            progressBar.value = progress;
+            fetch('/api/scraping_progress')
+                .then(response => response.json())
+                .then(data => {
+                    const progress = data.progress;
+                    progressBarFill.style.width = `${progress}%`;
+                    progressBarFill.innerText = `${progress}%`;
 
-            if (progress >= 100) {
-                clearInterval(interval);
-            }
-        }, 500);
+                    // Stop polling when progress reaches 100%
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        stopProgressBar();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching progress:', error);
+                    clearInterval(interval); // Stop polling on error
+                });
+        }, 1000); // Poll every second
     }
 }
 
 // Stop Progress Bar
 function stopProgressBar() {
-    const progressBar = document.getElementById('progress-bar');
-    if (progressBar) {
-        progressBar.style.display = 'none';
+    const progressBarContainer = document.getElementById('progress-bar-container');
+    const progressBarFill = document.getElementById('progress-bar-fill');
+    if (progressBarContainer && progressBarFill) {
+        progressBarFill.style.width = '0%';
+        progressBarFill.innerText = '0%';
+        progressBarContainer.style.display = 'none';
     }
 }
-
 
 function renderTable(data) {
     const tableContainer = document.getElementById('table-container');
