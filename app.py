@@ -1,20 +1,28 @@
 # app.py
-import waitress
-from flask import Flask, render_template, jsonify, request
+import gunicorn
+import gevent
+from flask import Flask, render_template, jsonify, request, Response
 from bs4 import BeautifulSoup
+import time
 import requests
 import json
 import os
+from progress_tracker import get_progress, reset_progress, update_progress
 from advancedParsing import AdvancedMappingParser, process_database_mappings
 
 app = Flask(__name__)
 
-scraping_progress = {"progress": 0}  # Global variable to store scraping progress
-
 @app.route('/api/scraping_progress')
-def get_scraping_progress():
-    global scraping_progress
-    return jsonify(scraping_progress or {"progress": 0})
+def scraping_progress_sse():
+    def generate():
+        while True:
+            progress = get_progress()
+            yield f"data: {json.dumps(progress)}\n\n"  # SSE format
+            if progress.get("progress", 0) >= 100:
+                break
+            time.sleep(1)  # Poll every second
+
+    return Response(generate(), content_type="text/event-stream")
 
 def normalize_type(data_type):
     return data_type.split('(')[0].strip().upper()
@@ -104,36 +112,34 @@ def read_urls_from_file(filename):
 
 # Update the mappings.json file
 def update_mappings():
-    global scraping_progress
+    reset_progress()  # Start from 0
     sources_urls = read_urls_from_file('urls_sources.txt')
     targets_urls = read_urls_from_file('urls_targets.txt')
 
-    mappings = {
-        "sources": {},
-        "targets": {}
-    }
-
     total_tasks = len(sources_urls) + len(targets_urls)
     completed_tasks = 0
+
+    mappings = {"sources": {}, "targets": {}}
 
     for url, db_type, original_url in sources_urls:
         data = extract_mapping_from_page(url)
         if isinstance(data, list):
             mappings["sources"][db_type] = {"data_types": data, "url": original_url}
         completed_tasks += 1
-        scraping_progress["progress"] = int((completed_tasks / total_tasks) * 100)
+        update_progress(int((completed_tasks / total_tasks) * 100))
 
     for url, db_type, original_url in targets_urls:
         data = extract_mapping_from_page(url)
         if isinstance(data, list):
             mappings["targets"][db_type] = {"data_types": data, "url": original_url}
         completed_tasks += 1
-        scraping_progress["progress"] = int((completed_tasks / total_tasks) * 100)
+        update_progress(int((completed_tasks / total_tasks) * 100))
 
     with open('mappings.json', 'w') as f:
         json.dump(mappings, f, indent=2)
 
-    scraping_progress["progress"] = 100
+    update_progress(100)  # Ensure progress reaches 100%
+
 
 def update_mappings_specific(source=None, target=None):
     """
@@ -252,4 +258,4 @@ def get_combined_table():
 
 
 if __name__ == '__main__':
-    app.run(debug=False, port=8000)
+    app.run(debug=True)
