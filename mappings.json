@@ -227,7 +227,7 @@
           "replicate_or_target_type": "WSTRING(255)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Aurora%20PostgreSQL/aws_postgresql_data_types_source.htm#ar_postgresds_802412600_1377123"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Aurora%20PostgreSQL/aws_postgresql_data_types_source.htm#ar_postgresds_802412600_1377123"
     },
     "AWS Sql Server": {
       "data_types": [
@@ -357,14 +357,14 @@
         },
         {
           "source_or_replicate_type": "GEOMETRY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         },
         {
           "source_or_replicate_type": "GEOGRAPHY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AWS%20RDS%20MSSQL/aws_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/AWS%20RDS%20MSSQL/aws_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412"
     },
     "AWS MySQL": {
       "data_types": [
@@ -553,7 +553,7 @@
           "replicate_or_target_type": "CLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AWS%20RDS%20MySQL/aws_mysql_db_source_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/AWS%20RDS%20MySQL/aws_mysql_db_source_data_types.htm"
     },
     "AWS Postgres": {
       "data_types": [
@@ -782,7 +782,7 @@
           "replicate_or_target_type": "WSTRING(255)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AWS%20RDS%20PostgreSQL/aws_postgresql_data_types_source.htm#ar_postgresds_802412600_1377123"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/AWS%20RDS%20PostgreSQL/aws_postgresql_data_types_source.htm#ar_postgresds_802412600_1377123"
     },
     "AIS Source": {
       "data_types": [
@@ -871,7 +871,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AIS%20CDC%20Solutions/ais_data_type_mapping.htm#ar_aisds_1530464498_1268015"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/AIS%20CDC%20Solutions/ais_data_type_mapping.htm#ar_aisds_1530464498_1268015"
     },
     "Google Cloud AlloyDB for PostgreSQL": {
       "data_types": [
@@ -1100,7 +1100,7 @@
           "replicate_or_target_type": "WSTRING(255)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AlloyDBforPostgreSQLSource/postgresql_data_types_source.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/AlloyDBforPostgreSQLSource/postgresql_data_types_source.htm"
     },
     "Google Cloud SQL For Sql Server": {
       "data_types": [
@@ -1230,14 +1230,14 @@
         },
         {
           "source_or_replicate_type": "GEOMETRY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         },
         {
           "source_or_replicate_type": "GEOGRAPHY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/GoogleCloudSQLforSQLServerSource/GoogleCloudSQLforSQLServerSource-data-types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/GoogleCloudSQLforSQLServerSource/GoogleCloudSQLforSQLServerSource-data-types.htm"
     },
     "Google Cloud MySQL": {
       "data_types": [
@@ -1426,7 +1426,7 @@
           "replicate_or_target_type": "CLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20MySQL%20Source/googlesource_mysql_db_source_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Google%20Cloud%20MySQL%20Source/googlesource_mysql_db_source_data_types.htm"
     },
     "Google Cloud Postgres": {
       "data_types": [
@@ -1655,7 +1655,7 @@
           "replicate_or_target_type": "WSTRING(255)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20SQL%20for%20PostgreSQL_Source/postgresql_data_types_source.htm#ar_postgresds_802412600_1377123"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Google%20Cloud%20SQL%20for%20PostgreSQL_Source/postgresql_data_types_source.htm#ar_postgresds_802412600_1377123"
     },
     "DB2 on iSeries": {
       "data_types": [
@@ -1734,9 +1734,13 @@
         {
           "source_or_replicate_type": "TIMESTAMP WITH TIME ZONE",
           "replicate_or_target_type": "NOT SUPPORTED"
+        },
+        {
+          "source_or_replicate_type": "BOOLEAN\nInformation note\nThe BOOLEAN data type is supported from iSeries 7.5.",
+          "replicate_or_target_type": "BOOLEAN"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/IBM%20DB2%20for%20iSeries/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/IBM%20DB2%20for%20iSeries/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728"
     },
     "DB2 on LUW": {
       "data_types": [
@@ -1835,9 +1839,13 @@
         {
           "source_or_replicate_type": "XML",
           "replicate_or_target_type": "CLOB"
+        },
+        {
+          "source_or_replicate_type": "BOOLEAN\nInformation note\nThe BOOLEAN data type is supported from DB2 for LUW 11.5. \nReplicating BOOLEAN columns from earlier DB2 for LUW versions will cause the task to fail during Full Load.",
+          "replicate_or_target_type": "BOOLEAN"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/IBM%20DB2%20for%20LUW/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/IBM%20DB2%20for%20LUW/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728"
     },
     "DB2 on zOS": {
       "data_types": [
@@ -1954,7 +1962,7 @@
           "replicate_or_target_type": "NOT SUPPORTED"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/IBM%20DB2%20for%20zOS/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/IBM%20DB2%20for%20zOS/db2_db_data_types_source.htm#ar_ibm_db2_456845099_1403728"
     },
     "Informix": {
       "data_types": [
@@ -2075,7 +2083,7 @@
           "replicate_or_target_type": "BOOLEAN"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/IBM%20Informix/informix_db_data_types_source.htm#ar_informix_3524105662_1387696"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/IBM%20Informix/informix_db_data_types_source.htm#ar_informix_3524105662_1387696"
     },
     "Azure Sql Server": {
       "data_types": [
@@ -2205,14 +2213,14 @@
         },
         {
           "source_or_replicate_type": "GEOMETRY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         },
         {
           "source_or_replicate_type": "GEOGRAPHY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft%20Azure%20SQL%20Managed%20Instance/msmazuremi_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Microsoft%20Azure%20SQL%20Managed%20Instance/msmazuremi_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412"
     },
     "Azure Sql Server(MS-CDC)": {
       "data_types": [
@@ -2342,14 +2350,14 @@
         },
         {
           "source_or_replicate_type": "GEOMETRY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         },
         {
           "source_or_replicate_type": "GEOGRAPHY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Global_Common/Content/SharedReplicateHDD/Azure-MSCDC-Source/msmazuremi_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Global_Common/Content/SharedReplicateHDD/Azure-MSCDC-Source/msmazuremi_SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412"
     },
     "Sql Server(MS-CDC)": {
       "data_types": [
@@ -2479,14 +2487,14 @@
         },
         {
           "source_or_replicate_type": "GEOMETRY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         },
         {
           "source_or_replicate_type": "GEOGRAPHY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/MicrosoftSQLServer-MSCDC/MicrosoftSQLServer-MSCDC-data-types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/MicrosoftSQLServer-MSCDC/MicrosoftSQLServer-MSCDC-data-types.htm"
     },
     "Sql Server": {
       "data_types": [
@@ -2616,14 +2624,14 @@
         },
         {
           "source_or_replicate_type": "GEOMETRY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         },
         {
           "source_or_replicate_type": "GEOGRAPHY",
-          "replicate_or_target_type": "CLOB"
+          "replicate_or_target_type": "NCLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SQL%20Server/SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SQL%20Server/SQLServerDB_source_DataTypes.htm#ar_sqlserverds_1727505754_1656412"
     },
     "Azure MySQL": {
       "data_types": [
@@ -2812,7 +2820,7 @@
           "replicate_or_target_type": "CLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Azure%20Database%20for%20MySQL/azure_mysql_db_source_data_types.htm#ar_mysql_902766750_1667672"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Azure%20Database%20for%20MySQL/azure_mysql_db_source_data_types.htm#ar_mysql_902766750_1667672"
     },
     "MySQL": {
       "data_types": [
@@ -3001,7 +3009,7 @@
           "replicate_or_target_type": "CLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/MySQL/mysql_db_source_data_types.htm#ar_mysql_902766750_1667672"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/MySQL/mysql_db_source_data_types.htm#ar_mysql_902766750_1667672"
     },
     "ODBC (Generic)": {
       "data_types": [
@@ -3094,7 +3102,7 @@
           "replicate_or_target_type": "If column length is < or = 4000:\nBYTES\n\nIf column length is 0 or > 4000:\nBLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/ODBC/odbc_data_types_source.htm#ar_odbcds_2456996027_1377075"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/ODBC/odbc_data_types_source.htm#ar_odbcds_2456996027_1377075"
     },
     "ODBC with CDC (Generic)": {
       "data_types": [
@@ -3187,7 +3195,7 @@
           "replicate_or_target_type": "If column length is < or = 4000:\nBYTES\n\nIf column length is 0 or > 4000:\nBLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/ODBC%20with%20CDC/odbc_data_types_source.htm#ar_odbc_source_with_cdc_3709929996_1303592"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/ODBC%20with%20CDC/odbc_data_types_source.htm#ar_odbc_source_with_cdc_3709929996_1303592"
     },
     "Oracle": {
       "data_types": [
@@ -3240,8 +3248,12 @@
           "replicate_or_target_type": "STRING"
         },
         {
-          "source_or_replicate_type": "VARCHAR2",
-          "replicate_or_target_type": "Length <= 4000 bytes: \nSTRING\n\nLength > 4000 bytes: \nCLOB"
+          "source_or_replicate_type": "VARCHAR2(Length <= 4000 bytes)",
+          "replicate_or_target_type": "STRING"
+        },
+        {
+          "source_or_replicate_type": "VARCHAR2(Length > 4000 bytes)",
+          "replicate_or_target_type": "CLOB"
         },
         {
           "source_or_replicate_type": "NCHAR",
@@ -3284,7 +3296,7 @@
           "replicate_or_target_type": "CLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Oracle/ora_source_data_types.htm#ar_oracleds_385117211_1677127"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Oracle/ora_source_data_types.htm#ar_oracleds_385117211_1677127"
     },
     "PostgreSQL": {
       "data_types": [
@@ -3513,7 +3525,7 @@
           "replicate_or_target_type": "WSTRING(255)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/PostgreSQL/postgresql_data_types_source.htm#ar_postgresds_802412600_1377123"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/PostgreSQL/postgresql_data_types_source.htm#ar_postgresds_802412600_1377123"
     },
     "Salesforce": {
       "data_types": [
@@ -3590,7 +3602,7 @@
           "replicate_or_target_type": "WSTRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/salesforce/salesforce_postgresql_db_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/salesforce/salesforce_postgresql_db_data_types_target.htm"
     },
     "Salesforce Incremental": {
       "data_types": [
@@ -3665,9 +3677,13 @@
         {
           "source_or_replicate_type": "multipicklist",
           "replicate_or_target_type": "WSTRING"
+        },
+        {
+          "source_or_replicate_type": "anytype",
+          "replicate_or_target_type": "WSTRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Salesforce-Incremental/salesforce_incremental_db_data_types_source.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Salesforce-Incremental/salesforce_incremental_db_data_types_source.htm"
     },
     "SAP": {
       "data_types": [
@@ -3760,7 +3776,7 @@
           "replicate_or_target_type": "Numeric text"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP/SAP_source_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAP/SAP_source_data_types.htm"
     },
     "SAP Native": {
       "data_types": [
@@ -3853,7 +3869,7 @@
           "replicate_or_target_type": "Numeric text"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP%20Native/native_SAP_source_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAP%20Native/native_SAP_source_data_types.htm"
     },
     "SAP Extractor": {
       "data_types": [
@@ -3938,7 +3954,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAPExtractor/extractor_AP_source_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAPExtractor/extractor_AP_source_data_types.htm"
     },
     "SAP ODP": {
       "data_types": [
@@ -4027,7 +4043,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP%20ODP/SAP_ODP_data_types_source.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAP%20ODP/SAP_ODP_data_types_source.htm"
     },
     "Sybase ASE": {
       "data_types": [
@@ -4160,7 +4176,7 @@
           "replicate_or_target_type": "BLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP%20Sybase%20ASE/SAP_Sybase_ASE_db_Source_Data_Types.htm#ar_sybaseds_2343061694_1631287"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAP%20Sybase%20ASE/SAP_Sybase_ASE_db_Source_Data_Types.htm#ar_sybaseds_2343061694_1631287"
     },
     "Teradata": {
       "data_types": [
@@ -4313,7 +4329,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Teradata/teradata_data_types_source.htm#ar_teradatads_1612829151_1374294"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Teradata/teradata_data_types_source.htm#ar_teradatads_1612829151_1374294"
     }
   },
   "targets": {
@@ -4404,7 +4420,7 @@
           "replicate_or_target_type": "BOOLEAN"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Amazon%20MSK/AmazonMSK_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Amazon%20MSK/AmazonMSK_data_types_target.htm"
     },
     "EMR(AWS)": {
       "data_types": [
@@ -4493,7 +4509,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Amazon%20EMR/AmazonEMR_hadoop_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Amazon%20EMR/AmazonEMR_hadoop_data_types_target.htm"
     },
     "Kinesis Streams(AWS)": {
       "data_types": [
@@ -4582,7 +4598,7 @@
           "replicate_or_target_type": "BOOLEAN (1)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Amazon%20Kinesis%20Streams/amazonkinesis_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Amazon%20Kinesis%20Streams/amazonkinesis_data_types.htm"
     },
     "Redshift(AWS)": {
       "data_types": [
@@ -4660,18 +4676,18 @@
         },
         {
           "source_or_replicate_type": "BLOB",
-          "replicate_or_target_type": "VARBYTE (16777216)\nInformation note\nThe maximum LOB size in the Metadata tab cannot exceed 31 KB."
+          "replicate_or_target_type": "VARBYTE (16777216)\nInformation note\n\nWhen capturing changes, a maximum of 32,000 bytes can be captured.\nThe maximum LOB size in the Metadata tab cannot exceed 31 KB."
         },
         {
           "source_or_replicate_type": "NCLOB",
-          "replicate_or_target_type": "VARCHAR (65535)\nInformation note\nThe maximum LOB size in the Metadata tab cannot exceed 63 KB."
+          "replicate_or_target_type": "NVARCHAR (65535)\nInformation note\nThe maximum LOB size in the Metadata tab cannot exceed 63 KB."
         },
         {
           "source_or_replicate_type": "CLOB",
-          "replicate_or_target_type": "VARCHAR (65535)\nInformation note\nThe maximum LOB size in the Metadata tab cannot exceed 63 KB."
+          "replicate_or_target_type": "NVARCHAR (65535)\nInformation note\nThe maximum LOB size in the Metadata tab cannot exceed 63 KB."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Amazon%20Redshift/redshift_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Amazon%20Redshift/redshift_data_types.htm"
     },
     "S3 (AWS)": {
       "data_types": [
@@ -4760,7 +4776,7 @@
           "replicate_or_target_type": "BOOLEAN (1)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Amazon%20S3/ar_mapping_to_dfm_s3.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Amazon%20S3/ar_mapping_to_dfm_s3.htm"
     },
     "Cloudera Data Platform (CDP) Private Cloud": {
       "data_types": [
@@ -4849,7 +4865,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/CDP_Data_Center/cdp_hadoop_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/CDP_Data_Center/cdp_hadoop_data_types_target.htm"
     },
     "Confluent Cloud": {
       "data_types": [
@@ -4938,7 +4954,7 @@
           "replicate_or_target_type": "BOOLEAN"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Confluent%20Cloud/confluent-data-types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Confluent%20Cloud/confluent-data-types.htm"
     },
     "Databricks Lakehouse (Delta)": {
       "data_types": [
@@ -4992,7 +5008,7 @@
         },
         {
           "source_or_replicate_type": "STRING",
-          "replicate_or_target_type": "Databricks 7.x and earlier:\nSTRING\nDatabricks 8.2 and later:\nVARCHAR (Length)"
+          "replicate_or_target_type": "VARCHAR (Length)"
         },
         {
           "source_or_replicate_type": "UINT1",
@@ -5012,7 +5028,7 @@
         },
         {
           "source_or_replicate_type": "WSTRING",
-          "replicate_or_target_type": "Databricks 7.x and earlier:\nSTRING\nDatabricks 8.2 and later:\nVARCHAR (Length)"
+          "replicate_or_target_type": "VARCHAR (Length)"
         },
         {
           "source_or_replicate_type": "BLOB",
@@ -5027,7 +5043,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Databricks%20Lakehouse%20(Delta)/databricks_delta_lakehouse_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Databricks%20Lakehouse%20(Delta)/databricks_delta_lakehouse_data_types_target.htm"
     },
     "Using Databricks (Cloud Storage)": {
       "data_types": [
@@ -5081,7 +5097,7 @@
         },
         {
           "source_or_replicate_type": "STRING",
-          "replicate_or_target_type": "Databricks 7.x and earlier:\nSTRING\nDatabricks 8.2 and later:\nVARCHAR (Length)"
+          "replicate_or_target_type": "VARCHAR (Length)"
         },
         {
           "source_or_replicate_type": "UINT1",
@@ -5101,7 +5117,7 @@
         },
         {
           "source_or_replicate_type": "WSTRING",
-          "replicate_or_target_type": "Databricks 7.x and earlier:\nSTRING\nDatabricks 8.2 and later:\nVARCHAR (Length)"
+          "replicate_or_target_type": "VARCHAR (Length)"
         },
         {
           "source_or_replicate_type": "BLOB",
@@ -5116,7 +5132,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/DatabricksCloudStorage/databricks-cloud-storage-data-types-target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/DatabricksCloudStorage/databricks-cloud-storage-data-types-target.htm"
     },
     "Google Cloud AlloyDB for PostgreSQL": {
       "data_types": [
@@ -5170,7 +5186,7 @@
         },
         {
           "source_or_replicate_type": "STRING",
-          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length in Bytes = The STRING value multiplied by three) \nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
+          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length)\nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
         },
         {
           "source_or_replicate_type": "UINT1",
@@ -5190,7 +5206,7 @@
         },
         {
           "source_or_replicate_type": "WSTRING",
-          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length in Bytes = The WSTRING value multiplied by three) \nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
+          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length)\nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
         },
         {
           "source_or_replicate_type": "BLOB",
@@ -5205,7 +5221,7 @@
           "replicate_or_target_type": "TEXT"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/AlloyDBforPostgreSQLTarget/postgresql_db_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/AlloyDBforPostgreSQLTarget/postgresql_db_data_types_target.htm"
     },
     "Google Cloud BigQuery": {
       "data_types": [
@@ -5243,7 +5259,7 @@
         },
         {
           "source_or_replicate_type": "NUMERIC",
-          "replicate_or_target_type": "If the data can be stored in 38,9, then:\nNUMERIC\nIf not, then:\nSTRING with length of original precision +2."
+          "replicate_or_target_type": "Scale between 0-9:\nNUMERIC\nIf not, then:\nBIGNUMERIC"
         },
         {
           "source_or_replicate_type": "REAL4",
@@ -5294,7 +5310,7 @@
           "replicate_or_target_type": "BOOLEAN"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20BigQuery/bigquery_postgresql_db_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Google%20Cloud%20BigQuery/bigquery_postgresql_db_data_types_target.htm"
     },
     "Google Cloud Pub/Sub": {
       "data_types": [
@@ -5383,7 +5399,7 @@
           "replicate_or_target_type": "BOOLEAN"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google-Cloud-PubSub/Pubsub-data-types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Google-Cloud-PubSub/Pubsub-data-types.htm"
     },
     "Google Cloud SQL for MySQL": {
       "data_types": [
@@ -5472,7 +5488,7 @@
           "replicate_or_target_type": "When the Allow unlimited LOB size option is enabled:\n\nTEXT CHARACTER SET UTF-16\n\nWhen the Limit LOB size to option is enabled:\n\n\nIf the specified value is  63 KB or smaller, then:\nTEXT CHARACTER SET UTF-16\n\n\n\n\nIf the specified value is  64 KB or larger, then:\nLONGTEXT CHARACTER SET UTF-16\n\n\nFor information on limiting LOB size, see Target metadata."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20MySQL/google_mysql_db_target_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Google%20Cloud%20MySQL/google_mysql_db_target_data_types.htm"
     },
     "Google Cloud SQL for PostgreSQL": {
       "data_types": [
@@ -5526,7 +5542,7 @@
         },
         {
           "source_or_replicate_type": "STRING",
-          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length in Bytes = The STRING value multiplied by three) \nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
+          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length)\nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
         },
         {
           "source_or_replicate_type": "UINT1",
@@ -5546,7 +5562,7 @@
         },
         {
           "source_or_replicate_type": "WSTRING",
-          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length in Bytes = The WSTRING value multiplied by three)\nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
+          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length)\nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
         },
         {
           "source_or_replicate_type": "BLOB",
@@ -5561,7 +5577,7 @@
           "replicate_or_target_type": "TEXT"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20SQL%20for%20PostgreSQL/googlepostgres_postgresql_db_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Google%20Cloud%20SQL%20for%20PostgreSQL/googlepostgres_postgresql_db_data_types_target.htm"
     },
     "Google Cloud SQL for SQL Server": {
       "data_types": [
@@ -5650,7 +5666,7 @@
           "replicate_or_target_type": "NVARCHAR(max)\n\nNTEXT\n\nTo use this data type with Qlik Replicate, you must enable the use of NCLOBs for a specific task."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/GoogleSqlServer/SQLServerDB_target_DataTypes.htm#ar_sqlserverds_1727505754_1643423"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/GoogleSqlServer/SQLServerDB_target_DataTypes.htm#ar_sqlserverds_1727505754_1643423"
     },
     "Google Cloud Storage": {
       "data_types": [
@@ -5739,7 +5755,7 @@
           "replicate_or_target_type": "BOOLEAN (1)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Cloud%20Storage/googlecloud_ar_mapping_to_dfm_s3.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Google%20Cloud%20Storage/googlecloud_ar_mapping_to_dfm_s3.htm"
     },
     "Google Dataproc": {
       "data_types": [
@@ -5828,7 +5844,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Google%20Dataproc/googledataproc_hadoop_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Google%20Dataproc/googledataproc_hadoop_data_types_target.htm"
     },
     "Hadoop": {
       "data_types": [
@@ -5917,7 +5933,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Hadoop/hadoop_data_types_target.htm#ar_hadoop_3420431187_1481123"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Hadoop/hadoop_data_types_target.htm#ar_hadoop_3420431187_1481123"
     },
     "Hortonworks Data Platform (HDP)": {
       "data_types": [
@@ -6006,7 +6022,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Hortonworks/hortonworks_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Hortonworks/hortonworks_data_types_target.htm"
     },
     "IBM DB2 for z/OS": {
       "data_types": [
@@ -6055,6 +6071,10 @@
           "replicate_or_target_type": "If scale < 7:\u00a0TIMESTAMP\nIf scale 7-12: VARCHAR (37)"
         },
         {
+          "source_or_replicate_type": "DATETIME",
+          "replicate_or_target_type": "If scale < 7:\u00a0TIMESTAMP\nIf scale 7-12: VARCHAR (37)"
+        },
+        {
           "source_or_replicate_type": "TIME",
           "replicate_or_target_type": "TIME"
         },
@@ -6095,7 +6115,7 @@
           "replicate_or_target_type": "DBCLOB (1G)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/ibm-db2-zos-target/zos_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/ibm-db2-zos-target/zos_data_types_target.htm"
     },
     "Kafka": {
       "data_types": [
@@ -6184,7 +6204,7 @@
           "replicate_or_target_type": "BOOLEAN (1)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Kafka/kafka_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Kafka/kafka_data_types.htm"
     },
     "Microsoft Azure ADLS": {
       "data_types": [
@@ -6273,7 +6293,7 @@
           "replicate_or_target_type": "BOOLEAN (1)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft%20Azure%20ADLS/azureadls_ar_mapping_to_dfm_s3.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Microsoft%20Azure%20ADLS/azureadls_ar_mapping_to_dfm_s3.htm"
     },
     "Microsoft Azure Database for MySQL": {
       "data_types": [
@@ -6362,7 +6382,7 @@
           "replicate_or_target_type": "When the Allow unlimited LOB size option is enabled:\n\nTEXT CHARACTER SET UTF-16\n\nWhen the Limit LOB size to option is enabled:\n\n\nIf the specified value is  63 KB or smaller, then:\nTEXT CHARACTER SET UTF-16\n\n\n\n\nIf the specified value is  64 KB or larger, then:\nLONGTEXT CHARACTER SET UTF-16\n\n\nFor information on limiting LOB size, see Target metadata."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft_Azure_MySQL/ms_mysql_db_target_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Microsoft_Azure_MySQL/ms_mysql_db_target_data_types.htm"
     },
     "Microsoft Azure Database for PostgreSQL": {
       "data_types": [
@@ -6384,7 +6404,7 @@
         },
         {
           "source_or_replicate_type": "DATETIME",
-          "replicate_or_target_type": "If scale is => 0 and =< 6, then:\nTIMESTAMP\n\nIf scale is => 7 and =< 12, then:\nVARCHAR (37)"
+          "replicate_or_target_type": "If scale is => 0 and =< 6, then:\nTIMESTAMP\nIf scale is => 7 and =< 12, then:\nVARCHAR (37)"
         },
         {
           "source_or_replicate_type": "INT1",
@@ -6416,7 +6436,7 @@
         },
         {
           "source_or_replicate_type": "STRING",
-          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length in Bytes = The STRING value multiplied by three) \nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
+          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length)\nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
         },
         {
           "source_or_replicate_type": "UINT1",
@@ -6436,7 +6456,7 @@
         },
         {
           "source_or_replicate_type": "WSTRING",
-          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length in Bytes = The WSTRING value multiplied by three) \nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
+          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length)\nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
         },
         {
           "source_or_replicate_type": "BLOB",
@@ -6451,7 +6471,7 @@
           "replicate_or_target_type": "TEXT"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft_Azure_PostgreSQL/ms_postgresql_db_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Microsoft_Azure_PostgreSQL/ms_postgresql_db_data_types_target.htm"
     },
     "Microsoft Azure Event Hubs": {
       "data_types": [
@@ -6540,7 +6560,7 @@
           "replicate_or_target_type": "BOOLEAN (1)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Azure%20Event%20Hubs/azure_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Azure%20Event%20Hubs/azure_data_types.htm"
     },
     "Microsoft Azure HDInsight": {
       "data_types": [
@@ -6629,7 +6649,7 @@
           "replicate_or_target_type": "STRING"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Azure%20HDInsight/hdinsight_hadoop_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Azure%20HDInsight/hdinsight_hadoop_data_types_target.htm"
     },
     "Microsoft Azure Synapse Analytics": {
       "data_types": [
@@ -6718,7 +6738,7 @@
           "replicate_or_target_type": "Full Load:\n\nVARCHAR (8000)\nChange Processing:\n\nVARCHAR (4000)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft%20Azure/azure_data_types.htm#ar_azureds_2362960730_1410427"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Microsoft%20Azure/azure_data_types.htm#ar_azureds_2362960730_1410427"
     },
     "Microsoft Azure SQL": {
       "data_types": [
@@ -6807,7 +6827,7 @@
           "replicate_or_target_type": "NVARCHAR (max)\n                        \nNTEXT\n                        \nTo use this data type with Qlik Replicate, you must enable the use of NCLOBs for a specific task."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Microsoft%20Azure%20SQL%20Database/azure_SQLServerDB_target_DataTypes.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Microsoft%20Azure%20SQL%20Database/azure_SQLServerDB_target_DataTypes.htm"
     },
     "Microsoft Fabric Data Warehouse": {
       "data_types": [
@@ -6828,7 +6848,7 @@
           "replicate_or_target_type": "If scale is 0-6, then:\nTIME (Scale)\nIf scale exceeds 6, then:\nTIME (6)"
         },
         {
-          "source_or_replicate_type": "DATETIME",
+          "source_or_replicate_type": "TIMESTAMP",
           "replicate_or_target_type": "If scale is 0-6, then:\nDATETIME2\u00a0(Scale)\nIf scale exceeds 6, then:\nDATETIME2\u00a0(6)"
         },
         {
@@ -6885,7 +6905,7 @@
         },
         {
           "source_or_replicate_type": "BLOB",
-          "replicate_or_target_type": "VARCHAR (8000)"
+          "replicate_or_target_type": "VARBINARY (8000)\nInformation note\n\nVARBINARY (8000) applies to the entire record. So, for example, if the record contains two BLOB columns, their total size cannot exceed 8000 bytes.\nWhen capturing changes, the maximum number of bytes that can be captured is 4000."
         },
         {
           "source_or_replicate_type": "NCLOB",
@@ -6896,7 +6916,7 @@
           "replicate_or_target_type": "VARCHAR (8000)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/MicrosoftFabricDW/fabric-data-types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/MicrosoftFabricDW/fabric-data-types.htm"
     },
     "Microsoft SQL Server": {
       "data_types": [
@@ -6985,7 +7005,7 @@
           "replicate_or_target_type": "NVARCHAR(max)\n\nNTEXT\n\nTo use this data type with Qlik Replicate, you must enable the use of NCLOBs for a specific task."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SQL%20Server/SQLServerDB_target_DataTypes.htm#ar_sqlserverds_1727505754_1643423"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SQL%20Server/SQLServerDB_target_DataTypes.htm#ar_sqlserverds_1727505754_1643423"
     },
     "MySQL-based": {
       "data_types": [
@@ -7074,7 +7094,7 @@
           "replicate_or_target_type": "When the Allow unlimited LOB size option is enabled:\n\nTEXT CHARACTER SET UTF-16\n\nWhen the Limit LOB size to option is enabled:\n\n\nIf the specified value is  63 KB or smaller, then:\nTEXT CHARACTER SET UTF-16\n\n\n\n\nIf the specified value is  64 KB or larger, then:\nLONGTEXT CHARACTER SET UTF-16\n\n\nFor information on limiting LOB size, see Target metadata."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/MySQL/mysql_db_target_data_types.htm#ar_mysql_902766750_1421922"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/MySQL/mysql_db_target_data_types.htm#ar_mysql_902766750_1421922"
     },
     "Netezza Performance Server (NPS)": {
       "data_types": [
@@ -7163,7 +7183,7 @@
           "replicate_or_target_type": "VARCHAR (64,000)"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/IBM%20Netezza/netezza_data_types_target.htm#ar_netezzads_4262553552_1348027"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/IBM%20Netezza/netezza_data_types_target.htm#ar_netezzads_4262553552_1348027"
     },
     "ODBC (Generic)": {
       "data_types": [
@@ -7248,7 +7268,7 @@
           "replicate_or_target_type": "BLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/ODBC/odbc_data_types_target.htm#ar_odbcds_2456996027_1416796"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/ODBC/odbc_data_types_target.htm#ar_odbcds_2456996027_1416796"
     },
     "Oracle": {
       "data_types": [
@@ -7341,7 +7361,7 @@
           "replicate_or_target_type": "XMLTYPE"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Oracle/ora_target_data_types.htm#ar_oracleds_385117211_1680373"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Oracle/ora_target_data_types.htm#ar_oracleds_385117211_1680373"
     },
     "PostgreSQL-Based": {
       "data_types": [
@@ -7395,7 +7415,7 @@
         },
         {
           "source_or_replicate_type": "STRING",
-          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length in Bytes = The STRING value multiplied by three) \nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
+          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length)\nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
         },
         {
           "source_or_replicate_type": "UINT1",
@@ -7415,7 +7435,7 @@
         },
         {
           "source_or_replicate_type": "WSTRING",
-          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length in Bytes = The WSTRING value multiplied by three) \nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
+          "replicate_or_target_type": "If length is 1 - 21845, then:\nVARCHAR (Length)\nIf length is 21846 - 2147483647, then:\nVARCHAR (65535)"
         },
         {
           "source_or_replicate_type": "BLOB",
@@ -7430,7 +7450,7 @@
           "replicate_or_target_type": "TEXT"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/PostgreSQL/postgresql_db_data_types_target.htm#ar_postgresds_802412600_1397898"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/PostgreSQL/postgresql_db_data_types_target.htm#ar_postgresds_802412600_1397898"
     },
     "SAP HANA": {
       "data_types": [
@@ -7519,7 +7539,7 @@
           "replicate_or_target_type": "CLOB"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP%20Hana%20Target/saphana_data_types_target.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAP%20Hana%20Target/saphana_data_types_target.htm"
     },
     "SAP Sybase ASE": {
       "data_types": [
@@ -7608,7 +7628,7 @@
           "replicate_or_target_type": "TEXT"
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/SAP%20Sybase%20ASE/SAP_Sybase_ASE_database_Target_Data_Types.htm#ar_sybaseds_2343061694_1364101"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/SAP%20Sybase%20ASE/SAP_Sybase_ASE_database_Target_Data_Types.htm#ar_sybaseds_2343061694_1364101"
     },
     "SingleStore": {
       "data_types": [
@@ -7697,7 +7717,7 @@
           "replicate_or_target_type": "When the Allow unlimited LOB size option is enabled:\n\nTEXT CHARACTER SET UTF-16\n\nWhen the Limit LOB size to option is enabled:\n\n\nIf the specified value is  63 KB or smaller, then:\nTEXT CHARACTER SET UTF-16\n\n\n\n\nIf the specified value is  64 KB or larger, then:\nLONGTEXT CHARACTER SET UTF-16\n\n\nFor information on limiting LOB size, see Target metadata."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/MemSQL/memsql_mysql_db_target_data_types.htm#ar_mysql_902766750_1421922"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/MemSQL/memsql_mysql_db_target_data_types.htm#ar_mysql_902766750_1421922"
     },
     "Snowflake(AWS)": {
       "data_types": [
@@ -7767,26 +7787,26 @@
         },
         {
           "source_or_replicate_type": "STRING",
-          "replicate_or_target_type": "If length is => 1 and =< 16777216, then:\nVARCHAR (Length in Bytes)\nIf length is => 16777217 and =< 2147483647, then:\nVARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "If length is => 1 and =< 16777216, then:\nVARCHAR (Length in Bytes)\nIf length is => 16777217 and =< 2147483647, then:\nVARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         },
         {
           "source_or_replicate_type": "WSTRING",
-          "replicate_or_target_type": "If length is => 1 and =< 21845, then:\nVARCHAR (Length in Bytes)\nIf length is => 21846 and =< 2147483647, then:\nVARCHAR (65535)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "If length is => 1 and =< 21845, then:\nVARCHAR (Length in Bytes)\nIf length is => 21846 and =< 2147483647, then:\nVARCHAR (65535)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         },
         {
           "source_or_replicate_type": "BLOB",
-          "replicate_or_target_type": "If length is => 1 and =< 8388608, then:\nBINARY (Length in Bytes)\nIf length is => 8388609 and =< 2147483647, then:\nBINARY (8388608)"
+          "replicate_or_target_type": "BINARY (8388608)"
         },
         {
           "source_or_replicate_type": "NCLOB",
-          "replicate_or_target_type": "NVARCHAR (Max LOB Size)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "NVARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         },
         {
           "source_or_replicate_type": "CLOB",
-          "replicate_or_target_type": "VARCHAR (Max LOB Size)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "VARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Snowflake%20Target/SNOW_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Snowflake%20Target/SNOW_data_types.htm"
     },
     "Snowflake on Azure": {
       "data_types": [
@@ -7856,26 +7876,26 @@
         },
         {
           "source_or_replicate_type": "STRING",
-          "replicate_or_target_type": "If length is => 1 and =< 16777216, then:\nVARCHAR (Length in Bytes)\nIf length is => 16777217 and =< 2147483647, then:\nVARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "If length is => 1 and =< 16777216, then:\nVARCHAR (Length in Bytes)\nIf length is => 16777217 and =< 2147483647, then:\nVARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         },
         {
           "source_or_replicate_type": "WSTRING",
-          "replicate_or_target_type": "If length is => 1 and =< 21845, then:\nVARCHAR (Length in Bytes)\nIf length is => 21846 and =< 2147483647, then:\nVARCHAR (65535)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "If length is => 1 and =< 21845, then:\nVARCHAR (Length in Bytes)\nIf length is => 21846 and =< 2147483647, then:\nVARCHAR (65535)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         },
         {
           "source_or_replicate_type": "BLOB",
-          "replicate_or_target_type": "If length is => 1 and =< 8388608, then:\nBINARY (Length in Bytes)\nIf length is => 8388609 and =< 2147483647, then:\nBINARY (8388608)"
+          "replicate_or_target_type": "BINARY (8388608)"
         },
         {
           "source_or_replicate_type": "NCLOB",
-          "replicate_or_target_type": "VARCHAR (Max LOB Size)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "NVARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         },
         {
           "source_or_replicate_type": "CLOB",
-          "replicate_or_target_type": "VARCHAR (Max LOB Size)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "VARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Snowflake%20Azure%20Target/azure_SNOW_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Snowflake%20Azure%20Target/azure_SNOW_data_types.htm"
     },
     "Snowflake on Google": {
       "data_types": [
@@ -7945,26 +7965,26 @@
         },
         {
           "source_or_replicate_type": "STRING",
-          "replicate_or_target_type": "If length is => 1 and =< 16777216, then:\nVARCHAR (Length in Bytes)\nIf length is => 16777217 and =< 2147483647, then:\nVARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "If length is => 1 and =< 16777216, then:\nVARCHAR (Length in Bytes)\nIf length is => 16777217 and =< 2147483647, then:\nVARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         },
         {
           "source_or_replicate_type": "WSTRING",
-          "replicate_or_target_type": "If length is => 1 and =< 21845, then:\nVARCHAR (Length in Bytes)\nIf length is => 21846 and =< 2147483647, then:\nVARCHAR (65535)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "If length is => 1 and =< 21845, then:\nVARCHAR (Length in Bytes)\nIf length is => 21846 and =< 2147483647, then:\nVARCHAR (65535)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         },
         {
           "source_or_replicate_type": "BLOB",
-          "replicate_or_target_type": "If length is => 1 and =< 8388608, then:\nBINARY (Length in Bytes)\nIf length is => 8388609 and =< 2147483647, then:\nBINARY (8388608)"
+          "replicate_or_target_type": "BINARY (8388608)"
         },
         {
           "source_or_replicate_type": "NCLOB",
-          "replicate_or_target_type": "VARCHAR (Max LOB Size)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "NVARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         },
         {
           "source_or_replicate_type": "CLOB",
-          "replicate_or_target_type": "VARCHAR (Max LOB Size)\nIf subtype is JSON or XML, then:\nVARIANT"
+          "replicate_or_target_type": "VARCHAR (16777216)\nIf subtype is JSON or XML, then:\nVARIANT\nInformation noteThe XML subtype is not supported when the Loading method in the endpoint settings is set to Snowpipe Streaming."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Snowflake_Google_Target/google_SNOW_data_types.htm"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Snowflake_Google_Target/google_SNOW_data_types.htm"
     },
     "Teradata": {
       "data_types": [
@@ -8053,7 +8073,7 @@
           "replicate_or_target_type": "VARCHAR(${MAX_LOB_SIZE})\n\nCase-insensitive character set. \nMAX_LOB_SIZE is the maximum LOB size specified in Limited-Size LOB Mode."
         }
       ],
-      "url": "https://help.qlik.com/en-US/replicate/November2023/Content/Replicate/Main/Teradata/data_types_teradata.htm#ar_teradatads_1612829151_1290916"
+      "url": "https://help.qlik.com/en-US/replicate/November2024/Content/Replicate/Main/Teradata/data_types_teradata.htm#ar_teradatads_1612829151_1290916"
     }
   }
 }
