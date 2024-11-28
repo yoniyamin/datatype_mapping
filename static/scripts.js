@@ -55,50 +55,41 @@ document.getElementById('generate-table').addEventListener('click', function () 
 });
 
 
-let isLoading = false;
-
 function startProgressBar() {
-    if (isLoading) return; // Prevent multiple starts
-    isLoading = true;
-
     const progressBarContainer = document.getElementById('progress-bar-container');
     const progressBarFill = document.getElementById('progress-bar-fill');
 
     if (progressBarContainer && progressBarFill) {
         progressBarContainer.style.display = 'block';
 
-        const interval = setInterval(() => {
-            fetch('/api/scraping_progress')
-                .then(response => response.json())
-                .then(data => {
-                    const progress = data.progress || 0;
-                    progressBarFill.style.width = `${progress}%`;
-                    progressBarFill.innerText = `${progress}%`;
+        const eventSource = new EventSource('/api/scraping_progress');
+        eventSource.onmessage = function (event) {
+            const progress = JSON.parse(event.data).progress || 0;
+            progressBarFill.style.width = `${progress}%`;
+            progressBarFill.innerText = `${progress}%`;
 
-                    if (progress >= 100) {
-                        clearInterval(interval);
-                        progressBarContainer.style.display = 'none';
-                        isLoading = false; // Reset loading state
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching progress:', error);
-                    clearInterval(interval); // Stop polling on error
-                    isLoading = false; // Reset loading state
-                });
-        }, 1000); // Poll every second
+            if (progress >= 100) {
+                progressBarContainer.style.display = 'none';
+                eventSource.close();
+            }
+        };
+
+        eventSource.onerror = function () {
+            console.error('SSE connection error.');
+            eventSource.close();
+        };
     }
 }
 
 
-// Stop Progress Bar
 function stopProgressBar() {
     const progressBarContainer = document.getElementById('progress-bar-container');
     const progressBarFill = document.getElementById('progress-bar-fill');
+
     if (progressBarContainer && progressBarFill) {
         progressBarFill.style.width = '0%';
         progressBarFill.innerText = '0%';
-        progressBarContainer.style.display = 'none';
+        progressBarContainer.style.display = 'none'; // Hide the progress bar
     }
 }
 
