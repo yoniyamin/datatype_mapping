@@ -13,7 +13,8 @@ scraping_progress = {"progress": 0}  # Global variable to store scraping progres
 
 @app.route('/api/scraping_progress')
 def get_scraping_progress():
-    return jsonify(scraping_progress)
+    global scraping_progress
+    return jsonify(scraping_progress or {"progress": 0})
 
 def normalize_type(data_type):
     return data_type.split('(')[0].strip().upper()
