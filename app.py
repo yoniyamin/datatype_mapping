@@ -16,11 +16,11 @@ app = Flask(__name__)
 def scraping_progress_sse():
     def generate():
         while True:
-            progress = get_progress()
+            progress = get_progress()  # Ensure this returns a valid progress value
             yield f"data: {json.dumps(progress)}\n\n"  # SSE format
             if progress.get("progress", 0) >= 100:
                 break
-            time.sleep(1)  # Poll every second
+            time.sleep(1)  # Adjust frequency
 
     return Response(generate(), content_type="text/event-stream")
 
