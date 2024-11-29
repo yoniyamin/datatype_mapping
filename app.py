@@ -201,7 +201,7 @@ def index():
         mappings = json.load(f)
     sources = list(mappings['sources'].keys())
     targets = list(mappings['targets'].keys())
-    return render_template('index.html', sources=sources, targets=targets, is_admin=is_admin)
+    return render_template('index.html', sources=sources, targets=targets, is_admin=admin_flag)
 
 
 # API route to get mappings
