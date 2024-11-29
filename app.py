@@ -1,28 +1,14 @@
 # app.py
 import gunicorn
 import gevent
-from flask import Flask, render_template, jsonify, request, Response
+from flask import Flask, render_template, jsonify, request
 from bs4 import BeautifulSoup
-import time
 import requests
 import json
 import os
-from progress_tracker import get_progress, reset_progress, update_progress
 from advancedParsing import AdvancedMappingParser, process_database_mappings
 
 app = Flask(__name__)
-
-@app.route('/api/scraping_progress')
-def scraping_progress_sse():
-    def generate():
-        while True:
-            progress = get_progress()  # Ensure this returns a valid progress value
-            yield f"data: {json.dumps(progress)}\n\n"  # SSE format
-            if progress.get("progress", 0) >= 100:
-                break
-            time.sleep(1)  # Adjust frequency
-
-    return Response(generate(), content_type="text/event-stream")
 
 def normalize_type(data_type):
     return data_type.split('(')[0].strip().upper()
@@ -112,34 +98,36 @@ def read_urls_from_file(filename):
 
 # Update the mappings.json file
 def update_mappings():
-    reset_progress()  # Start from 0
+    """
+    Scrape and update mappings for all databases (sources and targets).
+    """
     sources_urls = read_urls_from_file('urls_sources.txt')
     targets_urls = read_urls_from_file('urls_targets.txt')
 
-    total_tasks = len(sources_urls) + len(targets_urls)
-    completed_tasks = 0
-
     mappings = {"sources": {}, "targets": {}}
 
+    # Scrape source databases
     for url, db_type, original_url in sources_urls:
         data = extract_mapping_from_page(url)
         if isinstance(data, list):
             mappings["sources"][db_type] = {"data_types": data, "url": original_url}
-        completed_tasks += 1
-        update_progress(int((completed_tasks / total_tasks) * 100))
+            print(f"Scraping {url} succeeded. {db_type} added to sources.")
+        else:
+            print(f"Error processing source {url}: {data.get('error', 'Unknown error')}")
 
+    # Scrape target databases
     for url, db_type, original_url in targets_urls:
         data = extract_mapping_from_page(url)
         if isinstance(data, list):
             mappings["targets"][db_type] = {"data_types": data, "url": original_url}
-        completed_tasks += 1
-        update_progress(int((completed_tasks / total_tasks) * 100))
+            print(f"Scraping {url} succeeded. {db_type} added to targets.")
+        else:
+            print(f"Error processing target {url}: {data.get('error', 'Unknown error')}")
 
+    # Save updated mappings
     with open('mappings.json', 'w') as f:
         json.dump(mappings, f, indent=2)
-
-    update_progress(100)  # Ensure progress reaches 100%
-
+    print("Mapping update completed.")
 
 def update_mappings_specific(source=None, target=None):
     """
