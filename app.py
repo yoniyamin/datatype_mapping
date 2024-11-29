@@ -7,6 +7,9 @@ import requests
 import json
 import os
 from advancedParsing import AdvancedMappingParser, process_database_mappings
+import sys
+
+is_admin = '--admin' in sys.argv
 
 app = Flask(__name__)
 
@@ -183,14 +186,22 @@ def match_target_type(replicate_type, target_mappings):
     return 'N/A'
 
 
-# Route for the main page
+
+# Admin Mode:
+# Visit: http://127.0.0.1:5000/?admin=true
+# The remapping options will be visible.
+#
+# Non-Admin Mode:
+# Visit: http://127.0.0.1:5000/ or http://127.0.0.1:5000/?admin=false
+# The remapping options will be hidden.
 @app.route('/')
 def index():
+    admin_flag = request.args.get('admin', 'false').lower() == 'true'
     with open('mappings.json', 'r') as f:
         mappings = json.load(f)
     sources = list(mappings['sources'].keys())
     targets = list(mappings['targets'].keys())
-    return render_template('index.html', sources=sources, targets=targets)
+    return render_template('index.html', sources=sources, targets=targets, is_admin=is_admin)
 
 
 # API route to get mappings
