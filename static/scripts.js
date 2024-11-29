@@ -1,23 +1,21 @@
 document.getElementById('generate-table').addEventListener('click', function () {
     const source = document.getElementById('source-select').value;
     const target = document.getElementById('target-select').value;
-    const useAdvanced = document.getElementById('use-advanced').checked; // Checkbox for advanced parsing
-    const remappingOption = document.querySelector('input[name="remapping-option"]:checked')?.value; // Corrected name attribute
+    const useAdvanced = document.getElementById('use-advanced')?.checked; // Checkbox for advanced parsing
+    const remappingOption = document.querySelector('input[name="remapping-option"]:checked')?.value || 'existing';
 
     if (!source || !target) {
         alert('Please select both source and target.');
         return;
     }
 
-    if (!remappingOption) {
-        alert('Please select a remapping option.');
-        return;
-    }
+    const exportButton = document.getElementById('export-csv');
+    exportButton.style.display = 'none';
 
-    // Start progress bar
+    // Show progress bar
     startProgressBar();
 
-    // API call
+    // Fetch combined table data
     fetch(`/api/combined_table?source=${encodeURIComponent(source)}&target=${encodeURIComponent(target)}&use_advanced=${useAdvanced}&remapping_option=${remappingOption}`)
         .then(response => {
             if (!response.ok) {
@@ -26,17 +24,20 @@ document.getElementById('generate-table').addEventListener('click', function () 
             return response.json();
         })
         .then(data => {
-            console.log('API response:', data); // Log the response
+            console.log('API response:', data);
 
             // Populate the table
             renderTable(data.table_data);
+
+            // Make the Export to CSV button visible
+            exportButton.style.display = 'inline-block';
 
             // Update the references
             if (data.source_url || data.target_url) {
                 const urlLinksHtml = `
                     <h3>References</h3>
-                    <p>Source Documentation: <a href="${data.source_url}" target="_blank">Source Documentation</a></p>
-                    <p>Target Documentation: <a href="${data.target_url}" target="_blank">Target Documentation</a></p>
+                    <p><a href="${data.source_url}" target="_blank">Source Documentation</a></p>
+                    <p><a href="${data.target_url}" target="_blank">Target Documentation</a></p>
                 `;
                 document.getElementById('url-links').innerHTML = urlLinksHtml;
             } else {
@@ -49,11 +50,21 @@ document.getElementById('generate-table').addEventListener('click', function () 
         .catch(error => {
             console.error('Error fetching combined table:', error);
             alert(`An error occurred while generating the table: ${error.message}. Please check the console for details.`);
-            // Stop the progress bar even in case of error
             stopProgressBar();
         });
 });
 
+document.getElementById('export-csv').addEventListener('click', function () {
+    const source = document.getElementById('source-select').value;
+    const target = document.getElementById('target-select').value;
+
+    if (!source || !target) {
+        alert('Please generate a table first before exporting to CSV.');
+        return;
+    }
+
+    exportToCSV(source, target);
+});
 
 function startProgressBar() {
     const progressBarContainer = document.getElementById('progress-bar-container');
@@ -61,27 +72,8 @@ function startProgressBar() {
 
     if (progressBarContainer && progressBarFill) {
         progressBarContainer.style.display = 'block'; // Show progress bar
-
-        const eventSource = new EventSource('/api/scraping_progress');
-
-        eventSource.onmessage = function (event) {
-            const data = JSON.parse(event.data);
-            const progress = data.progress || 0;
-
-            progressBarFill.style.width = `${progress}%`;
-            progressBarFill.innerText = `${progress}%`;
-
-            if (progress >= 100) {
-                eventSource.close();
-                stopProgressBar();
-            }
-        };
-
-        eventSource.onerror = function () {
-            console.error('Error with SSE connection. Retrying...');
-            eventSource.close();
-            setTimeout(startProgressBar, 3000); // Retry after 3 seconds
-        };
+        progressBarFill.style.width = '0%';
+        progressBarFill.innerText = 'Loading...';
     }
 }
 
@@ -90,12 +82,13 @@ function stopProgressBar() {
     const progressBarFill = document.getElementById('progress-bar-fill');
 
     if (progressBarContainer && progressBarFill) {
-        progressBarFill.style.width = '0%';
-        progressBarFill.innerText = '0%';
-        progressBarContainer.style.display = 'none'; // Hide progress bar
+        progressBarFill.style.width = '100%';
+        progressBarFill.innerText = 'Complete';
+        setTimeout(() => {
+            progressBarContainer.style.display = 'none';
+        }, 500); // Delay hiding to show "Complete" briefly
     }
 }
-
 
 function renderTable(data) {
     const tableContainer = document.getElementById('table-container');
@@ -135,7 +128,7 @@ function renderTable(data) {
 }
 
 function exportToCSV(source, target) {
-    const table = document.getElementById('generated-table');
+    const table = document.getElementById('table-container');
     if (!table) {
         alert('No table data to export');
         return;
