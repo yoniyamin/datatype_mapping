@@ -34,7 +34,7 @@
     </label>
     </div>
     <!-- Remapping Options -->
-    <div id="remapping-options-container">
+    <div id="remapping-options-container" style="display: {{ 'block' if is_admin else 'none' }}">
         <h3>Remapping Options</h3>
         <p>
             When choosing to remap, the application will go to the latest version of Qlik Replicate Documentation to scrape the information.
