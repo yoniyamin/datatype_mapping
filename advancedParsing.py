@@ -127,34 +127,70 @@ class AdvancedMappingParser:
 
     def parse_complex_mapping(self, replicate_type: str) -> List[Dict[str, Any]]:
         """
-        Parse replicate types with conditions into manageable entries.
+        Parse replicate types with advanced condition handling.
         """
+        # Simple types that don't need complex parsing
+        SIMPLE_TYPES = {
+            "INT4", "INT2", "INT8", "REAL4", "REAL8", "NCLOB", "BLOB", "DATETIME",
+            "DATE", "TIME", "STRING", "CLOB", "BOOLEAN", "NUMERIC", "UINT1",
+            "WSTRING", "BYTES", "INT1", "UINT2", "UINT4", "UINT8", "IGNORED",
+            "NOT SUPPORTED", "FLOAT", "DOUBLE", "INT", "LONG", "TIMESTAMP",
+            "TINYINT", "SMALLINT", "BIGINT", "BOOL", "FLOAT4", "FLOAT8",
+            "NUMBER", "BYTEA", "INTEGER", "TEXT", "REAL", "BIT", "BYTEINT",
+            "XMLTYPE", "IMAGE", "UNITEXT"
+        }
+
+        # Normalize input
+        replicate_type = replicate_type.strip()
+
+        # Check for simple types first
+        if replicate_type in SIMPLE_TYPES:
+            return [{"type": replicate_type, "condition": None}]
+
+        # Handle conditional mappings
         parsed_entries = []
-        has_conditions = False  # Track if there are any conditions
 
-        if "Length" in replicate_type or ":" in replicate_type:
-            lines = replicate_type.split("\n")
-            condition = None
+        # Split by lines and handle each line
+        lines = replicate_type.split("\n")
+        current_condition = None
 
-            for line in lines:
-                line = line.strip()
-                if line.startswith("Length") or line.startswith("When") or "<=" in line or ">" in line:
-                    condition = line  # Capture condition
-                    has_conditions = True
-                elif line:  # Non-empty line, treat as replicate type
-                    parsed_entries.append({
-                        "type": line.split(":")[-1].strip(),  # Extract datatype after colon
-                        "condition": condition.strip() if condition else None
-                    })
+        for line in lines:
+            line = line.strip()
 
-        # If no conditions exist, return a single unconditional entry
-        if not has_conditions:
+            # Check for condition lines
+            if line.startswith("If ") or line.startswith("When ") or ":" in line:
+                # Extract condition
+                condition_match = re.match(r'^(If|When)\s*(.*?):\s*(.+)', line)
+                if condition_match:
+                    current_condition = condition_match.group(2).strip()
+                    line = condition_match.group(3).strip()
+                else:
+                    parts = line.split(":", 1)
+                    if len(parts) == 2:
+                        current_condition = parts[0].strip()
+                        line = parts[1].strip()
+
+            # Extract type and any additional details
+            type_match = re.match(r'^(\w+)(\s*\(.*\))?', line)
+            if type_match:
+                base_type = type_match.group(1)
+                details = type_match.group(2) if type_match.group(2) else ""
+
+                # Verify base type is valid
+                if base_type in SIMPLE_TYPES:
+                    parsed_entry = {
+                        "type": base_type + (details if details else ""),
+                        "condition": current_condition
+                    }
+                    parsed_entries.append(parsed_entry)
+
+        # Fallback for completely unmatched types
+        if not parsed_entries:
             parsed_entries.append({
-                "type": replicate_type.strip(),
+                "type": replicate_type,
                 "condition": None
             })
 
-        self.logger.debug(f"Parsed complex mapping: {parsed_entries}")
         return parsed_entries
 
 
@@ -173,33 +209,23 @@ def process_database_mappings(source_data, target_data):
         parsed_mappings = parser.parse_complex_mapping(replicate_type)
 
         for mapping in parsed_mappings:
+            # Use the full replicate type from the original mapping
             replicate_type_clean = clean_replicate_type(mapping.get('type', 'N/A'))
-            replicate_details = extract_replicate_details(mapping.get('type', 'N/A'))
 
-            # Match each parsed replicate type with target mappings
-            target_type = parser._find_best_target_type(
-                {"type": replicate_type_clean, "condition": mapping.get('condition', None)},
-                target_data.get('data_types', [])
-            )
-
-            # Adjust target type based on rules
-            if "LOB" in replicate_type_clean.upper():
-                # For LOB types, strip any conditions
-                target_type = clean_lob_type(target_type)
-            elif replicate_details and target_type != 'N/A':
-                # Append conditions to target type for non-LOB cases
-                target_type = f"{target_type} {replicate_details}"
+            # Find corresponding target type
+            target_entries = target_data.get('data_types', [])
+            target_match = next((
+                entry.get('replicate_or_target_type', 'N/A')
+                for entry in target_entries
+                if clean_replicate_type(entry.get('source_or_replicate_type', '')) == replicate_type_clean
+            ), 'N/A')
 
             # Construct the combined row
             combined_row = {
                 "source_type": f"{source_type} ({mapping['condition']})" if mapping['condition'] else source_type,
                 "replicate_type": replicate_type_clean,
-                "target_type": target_type
+                "target_type": target_match
             }
-
-            # Avoid unnecessary "No condition" in source description
-            if "No condition" in combined_row["source_type"]:
-                combined_row["source_type"] = combined_row["source_type"].replace(" (No condition)", "")
 
             combined_data.append(combined_row)
 
@@ -211,7 +237,9 @@ def process_database_mappings(source_data, target_data):
 def clean_replicate_type(replicate_type: str) -> str:
     """
     Remove details like (n), (p,s), or (fraction) from replicate types.
+    Preserve the base type.
     """
+    # Strip parentheses while keeping the base type
     return re.sub(r'\(.*?\)', '', replicate_type).strip()
 
 def extract_replicate_details(replicate_type: str) -> str:
